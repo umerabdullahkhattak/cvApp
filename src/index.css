@@ -29,3 +29,6 @@ code {
   margin-bottom: 0px;
   margin-left: 45%;
 }
+.infoList{
+  list-style-type: none;
+}
