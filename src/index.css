@@ -5,9 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.experience{
+  
+  margin-bottom: 0px;
+  margin-left: 45%;
+}
+.info{
+  margin-bottom: 0px;
+  margin-left: 45%;
+}
+.education{
+  margin-bottom: 0px;
+  margin-left: 45%;
+}
+.skills{
+  margin-bottom: 0px;
+  margin-left: 45%;
 }
