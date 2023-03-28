@@ -32,3 +32,6 @@ code {
 .infoList{
   list-style-type: none;
 }
+.abc{
+  display: none;
+}

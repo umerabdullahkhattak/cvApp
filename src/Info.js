@@ -4,6 +4,7 @@ class Info extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showAddForm: true,
       infoBits: {
         name: '', 
         email: '',
@@ -24,7 +25,8 @@ class Info extends Component {
         name: '', 
         email: '',
         cellNo: ''
-      }
+      },
+      showAddForm: false
     });
     
   }
@@ -81,14 +83,14 @@ class Info extends Component {
   </li>
 ))}
         </ul>
-     
+     {showAddForm &&(
      <form onSubmit={this.handleSubmit} >
         <input type="text"  value={infoBits.name}  onChange={this.handleChangeName} placeholder='Name' />
         <input type="email" value={infoBits.email} onChange={this.handleChangeEmail} placeholder='Email' />
         <input type="number" value={infoBits.cellNo} onChange={this.handleChangeCellNo} placeholder='Cell Number' />
         <button type="submit">Submit</button>
-     </form>
-     
+     </form>)
+     }
      </div>
     );
   }
