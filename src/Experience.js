@@ -4,51 +4,74 @@ class Experience extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      showAddForm: false,
-      newItem: ''
+      showDonebutton: true,
+      showaddbutton: true,
+      completeStatus: false,
+      experience: "",
+      experiences: []
     };
   }
-  handleAdd = () => {
-    this.setState({ showAddForm: true });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleAddbutton = () => {
     this.setState({
-      items: [...this.state.items, this.state.newItem],
-      showAddForm: false,
-      newItem: ''
-    });
+      showaddbutton: false
+    })
+  }
+  handleInputChange = (e) => {
+    this.setState({
+      experience: e.target.value
+    })
+  }
+  handleDoneClick = () => {
+    this.setState({
+      experiences: this.state.experiences.concat(this.state.experience),
+      experience: "",
+      showaddbutton: true
+    })
+
+  }
+  handlecomplete = () => {
+    this.setState({
+        completeStatus: true    
+    })
   }
 
-  handleChange = (e) => {
-    this.setState({ newItem: e.target.value });
-  }
+render() {
+  const {showDonebutton, showaddbutton,experience,experiences, completeStatus} = this.state;
+  return(
+    <div className='expcomp'>
+      <h1 className='experience'>Experience</h1>
+      <ul>
+     {experiences.map((itemss, index) => (
+  <li key={index}>
+    <div> {itemss}</div>
+    
+  </li>
+  ))}
+  </ul>
+      {completeStatus ? (<></>):(<>
+        {showDonebutton ? (
+      <>
+        {showaddbutton ? (
+        <>
+          <button onClick={this.handleAddbutton}>Add</button>
+          <button onClick={this.handlecomplete}>Complete</button>
+        </>
+        ):(
+        <>
+          <input type="text" value={experience} onChange={(e) => this.handleInputChange(e)} />
+              <button onClick={() => this.handleDoneClick()}>Done</button>
+        </>
+        )}
+      </>
+      ): (
+      <>
 
-  render() {
-    const { items, showAddForm, newItem } = this.state;
-    return (
-        <div >
-     <h1 className='experience'>Experience</h1>
-     <hr/>
-     <ul>
-          {items.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        {!showAddForm && (
-          <button onClick={this.handleAdd}>Add</button>
-        )}
-        {showAddForm && (
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={newItem} onChange={this.handleChange} />
-            <button type="submit">Submit</button>
-          </form>
-        )}
-        </div>
-    );
-  }
+      </>
+      )}
+      </>)}
+     
+    </div>
+  )
 }
-
+}
 export default Experience;

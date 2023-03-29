@@ -1,55 +1,84 @@
 import React, { Component } from 'react';
 
-class skills extends Component {
+class Skills extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      showAddForm: false,
-      newItem: ''
-    };
+      tools: "",
+      languages: "",
+      showlangaddbutton: false,
+      showlangdonebutton: true,
+      showtoolsaddbutton: false,
+      showtoolsdonebutton: true
+    }
+    
   }
-  handleAdd = () => {
-    this.setState({ showAddForm: true });
+  handleAddClick = (field) => {
+    this.setState({ [`show${field}addbutton`]: true });
+      
   }
+  handleInputChange = (e,field) => {
+    {field === "lang" ?(
+ 
+            this.setState({
+            languages: e.target.value,
+    })
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+      
+    
+    ):(
+      this.setState({
+        tools: e.target.value,
+      })
+    )}
+
+    }
+    
+  handleDoneClick = (field) =>{
     this.setState({
-      items: [...this.state.items, this.state.newItem],
-      showAddForm: false,
-      newItem: ''
-    });
+      [`show${field}addbutton`]: false,
+      [`show${field}donebutton`]: false
+    })
   }
-
-  handleChange = (e) => {
-    this.setState({ newItem: e.target.value });
-  }
-
-
   render() {
-    const { items, showAddForm, newItem } = this.state;
-    return (
-        <div >
-     <h1 className='skills'>Skills</h1>
-     <hr/>
-     <ul>
-          {items.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        {!showAddForm && (
-          <button onClick={this.handleAdd}>Add</button>
-        )}
-        {showAddForm && (
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={newItem} onChange={this.handleChange} />
-            <button type="submit">Submit</button>
-          </form>
-        )}
-     </div>
-    );
+    const{tools, languages, showlangaddbutton, showlangdonebutton, showtoolsaddbutton, showtoolsdonebutton} = this.state;
+    return(
+      <div>
+        <h1 className='skills'>Information</h1>
+        
+        <h3>Languages: {languages}</h3>
+        
+        {showlangdonebutton ? (<>
+          {showlangaddbutton ? (
+  <>
+    <input type="text" value={languages} onChange={(e) => this.handleInputChange(e, 'lang')} />
+    <button onClick={() => this.handleDoneClick('lang')}>Done</button>
+  </>
+) : (
+  <>
+    <button onClick={() => this.handleAddClick('lang')}>Add</button> 
+  </>
+)}
+        </>):(<></>)}
+     
+
+        <h3>Tools: {tools}</h3>
+        {showtoolsdonebutton ? (<>
+          {showtoolsaddbutton ? (
+  <>
+    <input type="text" value={tools} onChange={(e) => this.handleInputChange(e, 'tools')} />
+    <button onClick={() => this.handleDoneClick('tools')}>Done</button>
+  </>
+) : (
+  <>
+    <button onClick={() => this.handleAddClick('tools')}>Add</button> 
+  </>
+)}
+        </>):(<></>)}
+
+      </div>
+    )
   }
 }
 
-export default skills;
+export default Skills;
