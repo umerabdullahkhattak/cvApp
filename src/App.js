@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Info from "./Info"
-import Education from "./Education"
-import Skills from "./Skills"
+import Info from './Info';
+import Education from './Education';
+import Skills from './Skills';
 import Experience from './Experience';
 class App extends Component {
   constructor(props) {
@@ -11,10 +11,10 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Info />
-      <Education />
-      <Skills />
-      <Experience />
+        <Info />
+        <Education />
+        <Skills />
+        <Experience />
       </div>
     );
   }

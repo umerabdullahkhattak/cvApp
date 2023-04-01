@@ -7,71 +7,74 @@ class Experience extends Component {
       showDonebutton: true,
       showaddbutton: true,
       completeStatus: false,
-      experience: "",
+      experience: '',
       experiences: []
     };
   }
   handleAddbutton = () => {
     this.setState({
       showaddbutton: false
-    })
-  }
+    });
+  };
   handleInputChange = (e) => {
     this.setState({
       experience: e.target.value
-    })
-  }
+    });
+  };
   handleDoneClick = () => {
     this.setState({
       experiences: this.state.experiences.concat(this.state.experience),
-      experience: "",
+      experience: '',
       showaddbutton: true
-    })
-
-  }
+    });
+  };
   handlecomplete = () => {
     this.setState({
-        completeStatus: true    
-    })
-  }
+      completeStatus: true
+    });
+  };
 
-render() {
-  const {showDonebutton, showaddbutton,experience,experiences, completeStatus} = this.state;
-  return(
-    <div className='expcomp'>
-      <h1 className='experience'>Experience</h1>
-      <ul>
-     {experiences.map((itemss, index) => (
-  <li key={index}>
-    <div> {itemss}</div>
-    
-  </li>
-  ))}
-  </ul>
-      {completeStatus ? (<></>):(<>
-        {showDonebutton ? (
-      <>
-        {showaddbutton ? (
-        <>
-          <button onClick={this.handleAddbutton}>Add</button>
-          <button onClick={this.handlecomplete}>Complete</button>
-        </>
-        ):(
-        <>
-          <input type="text" value={experience} onChange={(e) => this.handleInputChange(e)} />
-              <button onClick={() => this.handleDoneClick()}>Done</button>
-        </>
+  render() {
+    const { showDonebutton, showaddbutton, experience, experiences, completeStatus } = this.state;
+    return (
+      <div className="expcomp">
+        <h1 className="experience">Experience</h1>
+        <ul>
+          {experiences.map((itemss, index) => (
+            <li key={index}>
+              <div> {itemss}</div>
+            </li>
+          ))}
+        </ul>
+        {completeStatus ? (
+          <></>
+        ) : (
+          <>
+            {showDonebutton ? (
+              <>
+                {showaddbutton ? (
+                  <>
+                    <button onClick={this.handleAddbutton}>Add</button>
+                    <button onClick={this.handlecomplete}>Complete</button>
+                  </>
+                ) : (
+                  <>
+                    <input
+                      type="text"
+                      value={experience}
+                      onChange={(e) => this.handleInputChange(e)}
+                    />
+                    <button onClick={() => this.handleDoneClick()}>Done</button>
+                  </>
+                )}
+              </>
+            ) : (
+              <></>
+            )}
+          </>
         )}
-      </>
-      ): (
-      <>
-
-      </>
-      )}
-      </>)}
-     
-    </div>
-  )
-}
+      </div>
+    );
+  }
 }
 export default Experience;
