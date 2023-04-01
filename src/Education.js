@@ -46,7 +46,7 @@ class Education extends Component{
     const {showschooladdbutton, showcollegeaddbutton, showuniaddbutton ,school,college,uni,showschoolInput,showcollegeInput,showuniInput,schoolInputValue,collegeInputValue,uniInputValue} = this.state;
     return(
       <div >
-        <h1 className='info'>Education</h1>
+        <h1>Education</h1>
         <div>
           <h4>School:{school}</h4>
           {showschooladdbutton ? (<>{showschoolInput ? (

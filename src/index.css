@@ -19,8 +19,52 @@ code {
   margin-left: 45%;
 }
 .info{
-  margin-bottom: 0px;
-  margin-left: 45%;
+  background-color: antiquewhite;
+  /* padding-left: 1%;*/
+  padding-right: 1%; 
+  margin: 0px;
+  /* display: flex; */
+}
+.infolist{
+  list-style: none;
+  /* display: flex;
+  flex-direction: row; */
+  
+}
+.infolist li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.infoname{
+  font-size: 50px;
+  
+  
+}
+.infoemail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.emailicon{
+  height: 20px;
+  width: 20px;
+  padding-right: 5px;
+}
+.infono{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.noicon{
+  height: 20px;
+  width: 20px;
+  padding-right: 5px;
 }
 .education{
   margin-bottom: 0px;

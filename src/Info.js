@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import EmailIcon from "./emailIcon"
+import WaIcon from './whatsApp';
 
 class Info extends Component {
   constructor(props) {
@@ -71,18 +73,18 @@ class Info extends Component {
     const { items, showAddForm, newItem,email,name,cellNo,infoBits,info } = this.state;
     return (
       
-        <div >
-     <h1 className='info'>Information</h1>
-
-     <hr/>
-     <ul className='infoList'>
-     {info.map((itemss, index) => (
-  <li key={index}>
-    <div> <h3>{itemss.name}</h3> <h4>{itemss.email}</h4><h4>{itemss.cellNo}</h4></div>
-    
-  </li>
-))}
-        </ul>
+        <div className='info'>
+     <div >
+     <ul className='infolist'>
+  {info.map((itemss, index) => (
+    <li key={index}>
+      <div className='infoname'>{itemss.name}</div>
+      <div className='infoemail'><EmailIcon/>{itemss.email}</div>
+      <div className='infono'><WaIcon/>{itemss.cellNo}</div>
+    </li>
+  ))}
+</ul>
+        </div>
      {showAddForm &&(
      <form onSubmit={this.handleSubmit} >
         <input type="text"  value={infoBits.name}  onChange={this.handleChangeName} placeholder='Name' />
