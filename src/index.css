@@ -5,9 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 10px;
+  
 
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -19,11 +21,13 @@ code {
   margin-left: 45%;
 }
 .info{
-  background-color: antiquewhite;
+  background-color: rgb(124, 85, 34);
   /* padding-left: 1%;*/
   padding-right: 1%; 
   margin: 0px;
-  /* display: flex; */
+  height: 20vh;
+  width: 100%;
+  padding-bottom: 0px;
 }
 .infolist{
   list-style: none;
@@ -67,19 +71,58 @@ code {
   padding-right: 5px;
 }
 .education{
-  margin-bottom: 0px;
-  margin-left: 45%;
+ padding-left: 3vw;
+ background-color: rgb(124, 85, 34);
+ /* padding-left: 1%;*/
+ padding-right: 1%; 
+ margin: 0px;
+ height: 45vh;
+ width: 100%;
+}
+.schoolname{
+  font: 5vh;
+  padding-left: 8vw;
+}
+.collegename{
+  font: 5vh;
+  padding-left: 8vw;
+}
+.uniname{
+  font: 5vh;
+  padding-left: 8vw;
 }
 .skills{
-  margin-bottom: 0px;
-  margin-left: 45%;
-}
+  padding-left: 3vw;
+ background-color: rgb(124, 85, 34);
+ /* padding-left: 1%;*/
+ padding-right: 1%; 
+ margin: 0px;
+ height: 30vh;
+ width: 100%;}
+ .languages{
+  font: 5vh;
+  padding-left: 8vw;
+ }
+ .tools{
+  font: 5vh;
+  padding-left: 8vw;
+ }
 .infoList{
   list-style-type: none;
 }
 .abc{
   display: none;
 }
-.expcomp{
-  padding-bottom: 200px;
+.experience{
+  padding-left: 3vw;
+ background-color: rgb(124, 85, 34);
+ /* padding-left: 1%;*/
+ padding-right: 1%; 
+ margin: 0px;
+ height: 30vh;
+ width: 100%;
+}
+.experiencelist{
+  font: 5vh;
+  padding-left: 8vw;
 }

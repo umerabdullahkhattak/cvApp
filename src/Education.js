@@ -54,10 +54,11 @@ class Education extends Component {
       uniInputValue
     } = this.state;
     return (
-      <div>
-        <h1>Education</h1>
+      <div className="education">
+        <h1>Education:</h1>
         <div>
-          <h4>School:{school}</h4>
+          <h3>School:</h3>
+          <p className="schoolname">{school}</p>
           {showschooladdbutton ? (
             <>
               {showschoolInput ? (
@@ -78,7 +79,8 @@ class Education extends Component {
           )}
         </div>
         <div>
-          <h4>College: {college}</h4>
+          <h3>College:</h3>
+          <p className="collegename">{college}</p>
           {showcollegeaddbutton ? (
             <>
               {showcollegeInput ? (
@@ -99,7 +101,8 @@ class Education extends Component {
           )}
         </div>
         <div>
-          <h4>University: {uni}</h4>
+          <h3>University:</h3>
+          <p className="uniname">{uni}</p>
           {showuniaddbutton ? (
             <>
               {' '}

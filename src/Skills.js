@@ -43,10 +43,11 @@ class Skills extends Component {
       showtoolsdonebutton
     } = this.state;
     return (
-      <div>
-        <h1 className="skills">Information</h1>
+      <div className="skills">
+        <h1>Skills:</h1>
 
-        <h3>Languages: {languages}</h3>
+        <h3>Languages:</h3>
+        <p className="languages">{languages}</p>
 
         {showlangdonebutton ? (
           <>
@@ -69,7 +70,8 @@ class Skills extends Component {
           <></>
         )}
 
-        <h3>Tools: {tools}</h3>
+        <h3>Tools:</h3>
+        <p className="tools">{tools}</p>
         {showtoolsdonebutton ? (
           <>
             {showtoolsaddbutton ? (

@@ -37,9 +37,9 @@ class Experience extends Component {
   render() {
     const { showDonebutton, showaddbutton, experience, experiences, completeStatus } = this.state;
     return (
-      <div className="expcomp">
-        <h1 className="experience">Experience</h1>
-        <ul>
+      <div className="experience">
+        <h1>Experience</h1>
+        <ul className="experiencelist">
           {experiences.map((itemss, index) => (
             <li key={index}>
               <div> {itemss}</div>
